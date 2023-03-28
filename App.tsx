@@ -1,16 +1,16 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StatusBar, Text} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {StyleSheet, View} from 'react-native';
 
-const App = () => (
-  <SafeAreaView style={{backgroundColor: Colors.lighter}}>
-    <StatusBar barStyle={'dark-content'} />
-    <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-      style={{backgroundColor: Colors.lighter}}>
-      <Text>App screen</Text>
-    </ScrollView>
-  </SafeAreaView>
+import {Navigator} from './src/navigation/Navigator';
+
+export const App: React.FC = () => (
+  <View style={styles.container}>
+    <Navigator />
+  </View>
 );
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
