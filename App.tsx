@@ -1,16 +1,13 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { NavigationTemplate } from '@component/container/NavigationTemplate';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import {Navigator} from './src/navigation/Navigator';
+import { Navigator } from './src/navigation/Navigator';
 
 export const App: React.FC = () => (
-  <View style={styles.container}>
-    <Navigator />
-  </View>
+  <SafeAreaProvider>
+    <NavigationTemplate>
+      <Navigator />
+    </NavigationTemplate>
+  </SafeAreaProvider>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

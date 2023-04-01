@@ -16,6 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@screen/*": ["src/ui/screen/*"],
+      "@color": ["src/style/color"],
+      "@component/*": ["src/ui/component/*"],
     }
   },
   "exclude": [

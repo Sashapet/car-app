@@ -9,6 +9,8 @@ module.exports = {
       {
         alias: {
           '@screen': './src/ui/screen',
+          '@color': './src/style/color',
+          '@component': './src/ui/component',
         },
         extensions: ['.js', '.ts'],
       },
