@@ -1,5 +1,7 @@
+// prettier-ignore
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
+  /* Recommended React Native TSConfig base */
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -11,9 +13,11 @@
     "allowJs": true,
     "esModuleInterop": true,
     "isolatedModules": false,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@screen/*": ["src/ui/screen/*"],
+    }
   },
-  "include": ["src", "__tests__"],
   "exclude": [
     "node_modules",
     "babel.config.js",
