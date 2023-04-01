@@ -6,6 +6,7 @@ import { DetailsScreen } from '@screen/DetailsScreen';
 import { OffersScreen } from '@screen/OffersScreen';
 import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { COLOR_TRANSPARENT, COLOR_WHITE } from '@color';
 
 import { screen } from './enum/screen';
 import { StackParamList } from './type/types';
@@ -25,11 +26,24 @@ export const Navigator = () => {
             headerTitleAlign: 'center',
             headerStyle: styles.transparent,
             headerShadowVisible: false,
+            headerTitleStyle: styles.title,
           }}
           initialRouteName={screen.DETAILS}>
-          <Stack.Screen name={screen.DETAILS} component={DetailsScreen} />
-          <Stack.Screen name={screen.OFFERS} component={OffersScreen} />
-          <Stack.Screen name={screen.SUMMARY} component={SummaryScreen} />
+          <Stack.Screen
+            options={{ headerTitle: 'Draudimas' }}
+            name={screen.DETAILS}
+            component={DetailsScreen}
+          />
+          <Stack.Screen
+            options={{ headerTitle: 'Draudimo pasiūlymai' }}
+            name={screen.OFFERS}
+            component={OffersScreen}
+          />
+          <Stack.Screen
+            options={{ headerTitle: 'Užzakymo patvirtinimas' }}
+            name={screen.SUMMARY}
+            component={SummaryScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
@@ -38,8 +52,13 @@ export const Navigator = () => {
 
 const styles = StyleSheet.create({
   rectangle: {
-    backgroundColor: 'rgba(0, 0, 0, 0.05)',
+    backgroundColor: COLOR_TRANSPARENT,
     height: 20,
+  },
+  title: {
+    color: COLOR_WHITE,
+    fontFamily: 'Poppins-Regular',
+    fontSize: 16,
   },
   transparent: {
     backgroundColor: 'transparent',

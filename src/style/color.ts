@@ -5,6 +5,7 @@ const COLOR_DANGER = '#FF4751';
 const COLOR_GREY = '#A0A0A0';
 const COLOR_LIGHT_GREY = '#CCCCCC';
 const COLOR_OCEAN = '#35D5F5';
+const COLOR_TRANSPARENT = 'rgba(0, 0, 0, 0.05)';
 
 export {
   COLOR_PRIMARY,
@@ -14,4 +15,5 @@ export {
   COLOR_GREY,
   COLOR_LIGHT_GREY,
   COLOR_OCEAN,
+  COLOR_TRANSPARENT,
 };
