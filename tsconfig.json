@@ -1,7 +1,6 @@
 // prettier-ignore
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
-  /* Recommended React Native TSConfig base */
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -16,6 +15,8 @@
     "baseUrl": ".",
     "paths": {
       "@screen/*": ["src/ui/screen/*"],
+      "@color": ["src/style/color"],
+      "@component/*": ["src/ui/component/*"],
     }
   },
   "exclude": [
