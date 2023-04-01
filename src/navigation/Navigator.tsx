@@ -1,12 +1,12 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SummaryScreen } from '@screen/SummaryScreen';
+import { DetailsScreen } from '@screen/DetailsScreen';
+import { OffersScreen } from '@screen/OffersScreen';
 
-import {DetailsScreen} from '../ui/screen/DetailsScreen';
-import {OffersScreen} from '../ui/screen/OffersScreen';
-import {SummaryScreen} from '../ui/screen/SummaryScreen';
-import {screen} from './enum/screen';
-import {StackParamList} from './type/types';
+import { screen } from './enum/screen';
+import { StackParamList } from './type/types';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
