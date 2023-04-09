@@ -11,6 +11,8 @@ module.exports = {
           '@screen': './src/ui/screen',
           '@color': './src/style/color',
           '@component': './src/ui/component',
+          '@util': './src/util',
+          '@enums': './src/enums',
         },
         extensions: ['.js', '.ts'],
       },
