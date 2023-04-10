@@ -12,35 +12,52 @@ import { DefaultBtn } from '@component/button/DefaultBtn';
 
 interface IOfferCard {
   name: string;
+  cost: string;
 }
 
-export const OfferCard: React.FC<IOfferCard> = () => (
-  <View style={styles.offerContainer}>
-    <View style={styles.upperSection}>
-      <Image source={require('../../../../assets/images/ergo.png')} />
-    </View>
+export const OfferCard: React.FC<IOfferCard> = ({ cost, name }) => {
+  const chooseImage = () => {
+    switch (name) {
+      case 'draudimas':
+        return (
+          <Image source={require(`../../../../assets/images/draudimas.png`)} />
+        );
+      case 'compensa':
+        return (
+          <Image source={require(`../../../../assets/images/compensa.png`)} />
+        );
+      case 'ergo':
+        return <Image source={require(`../../../../assets/images/ergo.png`)} />;
+      default:
+        null;
+    }
+  };
 
-    <View style={styles.sectionLine}>
-      <View style={styles.costContainer}>
-        <Text style={styles.cost}>13,42 $</Text>
-        <View style={styles.infoContainer}>
-          <InfoIcon />
+  return (
+    <View style={styles.offerContainer}>
+      <View style={styles.upperSection}>{chooseImage()}</View>
+      <View style={styles.sectionLine}>
+        <View style={styles.costContainer}>
+          <Text style={styles.cost}>{cost} €</Text>
+          <View style={styles.infoContainer}>
+            <InfoIcon />
+          </View>
         </View>
-      </View>
-      <View style={styles.bottomSection}>
-        <View style={styles.completeContainer}>
-          <CompleteIcon />
+        <View style={styles.bottomSection}>
+          <View style={styles.completeContainer}>
+            <CompleteIcon />
+          </View>
+          <Text style={styles.informationText}>
+            Transportavimas sumaišius degalus
+          </Text>
         </View>
-        <Text style={styles.informationText}>
-          Transportavimas sumaišius degalus
-        </Text>
+        <DefaultBtn onPress={() => console.log('Pasirinkti')}>
+          Pasirinkti
+        </DefaultBtn>
       </View>
-      <DefaultBtn onPress={() => console.log('Pasirinkti')}>
-        Pasirinkti
-      </DefaultBtn>
     </View>
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   bottomSection: {
@@ -87,6 +104,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     height: 320,
     justifyContent: 'space-between',
+    marginRight: 14,
     paddingHorizontal: 16,
     width: 240,
   },

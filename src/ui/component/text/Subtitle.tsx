@@ -12,5 +12,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
     lineHeight: 24,
+    textAlign: 'center',
   },
 });
