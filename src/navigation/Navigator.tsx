@@ -35,7 +35,7 @@ export const Navigator = () => {
               headerShadowVisible: false,
               headerTitleStyle: styles.title,
             }}
-            initialRouteName={screen.OFFERS}>
+            initialRouteName={screen.SUMMARY}>
             <Stack.Screen
               options={{ headerTitle: 'Draudimas' }}
               name={screen.DETAILS}
@@ -47,7 +47,7 @@ export const Navigator = () => {
               component={OffersScreen}
             />
             <Stack.Screen
-              options={{ headerTitle: 'Užzakymo patvirtinimas' }}
+              options={{ headerTitle: 'Užsakymo patvirtinimas' }}
               name={screen.SUMMARY}
               component={SummaryScreen}
             />

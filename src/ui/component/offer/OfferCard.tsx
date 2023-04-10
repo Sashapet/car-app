@@ -1,14 +1,10 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {
-  COLOR_LIGHT_BLUE,
-  COLOR_PRIMARY,
-  COLOR_SECONDARY,
-  COLOR_WHITE,
-} from '@color';
+import { COLOR_LIGHT_BLUE, COLOR_SECONDARY, COLOR_WHITE } from '@color';
 import { InfoIcon } from '@component/icon/InfoIcon';
 import { CompleteIcon } from '@component/icon/CompleteIcon';
 import { DefaultBtn } from '@component/button/DefaultBtn';
+import { Cost } from '@component/text/Cost';
 
 interface IOfferCard {
   name: string;
@@ -38,7 +34,7 @@ export const OfferCard: React.FC<IOfferCard> = ({ cost, name }) => {
       <View style={styles.upperSection}>{chooseImage()}</View>
       <View style={styles.sectionLine}>
         <View style={styles.costContainer}>
-          <Text style={styles.cost}>{cost} €</Text>
+          <Cost>{cost} €</Cost>
           <View style={styles.infoContainer}>
             <InfoIcon />
           </View>
@@ -74,11 +70,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 16,
     width: 28,
-  },
-  cost: {
-    color: COLOR_PRIMARY,
-    fontFamily: 'Poppins-Bold',
-    fontSize: 24,
   },
   costContainer: {
     flexDirection: 'row',
