@@ -9,7 +9,7 @@ const minDate = new Date(
 );
 
 export const schema = Yup.object().shape({
-  date: Yup.date().min(minDate, 'Date must be equal to or after today'),
-  carNumber: Yup.string().max(11).required(),
+  startDate: Yup.date().min(minDate, 'Date must be equal to or after today'),
+  regPlate: Yup.string().max(11).required(),
   personalCode: Yup.number().required(),
 });

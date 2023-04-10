@@ -12,7 +12,7 @@ import {
 import DatePicker from 'react-native-date-picker';
 
 interface DetailsValues {
-  carNumber: string;
+  regPlate: string;
   date: Date;
   personalCode: string;
 }
