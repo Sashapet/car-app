@@ -35,7 +35,7 @@ export const Navigator = () => {
               headerShadowVisible: false,
               headerTitleStyle: styles.title,
             }}
-            initialRouteName={screen.DETAILS}>
+            initialRouteName={screen.OFFERS}>
             <Stack.Screen
               options={{ headerTitle: 'Draudimas' }}
               name={screen.DETAILS}

@@ -13,21 +13,19 @@ import { btnType } from '@enums/btnType';
 export const DetailsForm: React.FC = () => (
   <Formik
     initialValues={{
-      carNumber: '',
-      date: new Date(),
+      regPlate: '',
+      startDate: new Date(),
       personalCode: '',
       timePeriod: periodType.LONG,
     }}
     validationSchema={schema}
     onSubmit={values => console.log(values)}>
-    {({ handleSubmit, errors, setFieldValue, values }) => {
+    {({ handleSubmit, setFieldValue, values }) => {
       const periodButtons = [
         periodType.SHORT,
         periodType.MEDIUM,
         periodType.LONG,
       ];
-
-      console.log(errors);
 
       const onTimePeriod = (period: periodType) =>
         setFieldValue('timePeriod', period, true);
@@ -35,7 +33,7 @@ export const DetailsForm: React.FC = () => (
       return (
         <>
           <DateInput />
-          <Input type="carNumber" />
+          <Input type="regPlate" />
           <Input type="personalCode" />
           <View style={styles.subtitleStyle}>
             <Subtitle>Draudimo trukmė</Subtitle>

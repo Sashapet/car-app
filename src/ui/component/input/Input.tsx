@@ -10,23 +10,23 @@ import {
 import { useFormikContext } from 'formik';
 
 interface DetailsValues {
-  carNumber: string;
+  regPlate: string;
   date: Date;
   personalCode: string;
 }
 
 interface IInput {
-  type: 'carNumber' | 'personalCode';
+  type: 'regPlate' | 'personalCode';
 }
 
 export const Input: React.FC<IInput> = ({ type }) => {
   const { handleChange, values } = useFormikContext<DetailsValues>();
   const value = values[type];
-  const label = type === 'carNumber' ? 'Valstybinis numeris' : 'Asmenis kodas';
-  const labelStyle = [styles.label, type === 'carNumber' && styles.red];
-  const inputStyle = [styles.input, type === 'carNumber' && styles.red];
-  const placeholder = type === 'carNumber' ? 'ABC123' : '30000000000';
-  const keyboardType = type === 'carNumber' ? 'default' : 'numeric';
+  const label = type === 'regPlate' ? 'Valstybinis numeris' : 'Asmenis kodas';
+  const labelStyle = [styles.label, type === 'regPlate' && styles.red];
+  const inputStyle = [styles.input, type === 'regPlate' && styles.red];
+  const placeholder = type === 'regPlate' ? 'ABC123' : '30000000000';
+  const keyboardType = type === 'regPlate' ? 'default' : 'numeric';
 
   return (
     <View style={styles.inputContainer}>
