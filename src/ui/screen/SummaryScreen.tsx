@@ -3,33 +3,36 @@ import React from 'react';
 import { COLOR_LIGHT_BLUE, COLOR_SECONDARY, COLOR_WHITE } from '@color';
 import { Subtitle } from '@component/text/Subtitle';
 import { Cost } from '@component/text/Cost';
+import { GradientTemplate } from '@component/container/GradientTemplate';
 
 export const SummaryScreen: React.FC = () => (
-  <View style={styles.summaryContainer}>
-    <View style={styles.cardContainer}>
-      <View style={styles.row}>
-        <Text style={styles.title}>Privalomas draudimas</Text>
-      </View>
-      <View style={styles.sectionLine} />
-      <View style={styles.row}>
-        <Subtitle color="grey">Draudimo bendrove</Subtitle>
-        <Subtitle color="secondary">Lietuvos draudimas, AB</Subtitle>
-      </View>
-      <View style={styles.row}>
-        <Subtitle color="grey">Draudimo laikas</Subtitle>
-        <Subtitle color="secondary">Lietuvos draudimas, AB</Subtitle>
-      </View>
-      <View style={styles.row}>
-        <Subtitle color="grey">Naudojimo paskirtis</Subtitle>
-        <Subtitle color="secondary">Lietuvos draudimas, AB</Subtitle>
-      </View>
-      <View style={styles.sectionLine} />
-      <View style={styles.row}>
-        <Subtitle color="grey">Draudimo įmoka</Subtitle>
-        <Cost>13,42 €</Cost>
+  <GradientTemplate>
+    <View style={styles.summaryContainer}>
+      <View style={styles.cardContainer}>
+        <View style={styles.row}>
+          <Text style={styles.title}>Privalomas draudimas</Text>
+        </View>
+        <View style={styles.sectionLine} />
+        <View style={styles.row}>
+          <Subtitle color="grey">Draudimo bendrove</Subtitle>
+          <Subtitle color="secondary">Lietuvos draudimas, AB</Subtitle>
+        </View>
+        <View style={styles.row}>
+          <Subtitle color="grey">Draudimo laikas</Subtitle>
+          <Subtitle color="secondary">Lietuvos draudimas, AB</Subtitle>
+        </View>
+        <View style={styles.row}>
+          <Subtitle color="grey">Naudojimo paskirtis</Subtitle>
+          <Subtitle color="secondary">Lietuvos draudimas, AB</Subtitle>
+        </View>
+        <View style={styles.sectionLine} />
+        <View style={styles.row}>
+          <Subtitle color="grey">Draudimo įmoka</Subtitle>
+          <Cost>13,42 €</Cost>
+        </View>
       </View>
     </View>
-  </View>
+  </GradientTemplate>
 );
 
 const styles = StyleSheet.create({

@@ -4,6 +4,7 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
     [
       'module-resolver',
       {
@@ -12,7 +13,8 @@ module.exports = {
           '@color': './src/style/color',
           '@component': './src/ui/component',
           '@util': './src/util',
-          '@enums': './src/enums',
+          '@interface': './src/types/interface',
+          '@enums': './src/types/enums',
         },
         extensions: ['.js', '.ts'],
       },
