@@ -7,14 +7,14 @@ import { DefaultBtn } from '@component/button/DefaultBtn';
 import { Cost } from '@component/text/Cost';
 
 interface IOfferCard {
-  name: string;
-  cost: string;
+  id?: string;
+  cost?: number;
 }
 
-export const OfferCard: React.FC<IOfferCard> = ({ cost, name }) => {
+export const OfferCard: React.FC<IOfferCard> = ({ cost, id }) => {
   const chooseImage = () => {
-    switch (name) {
-      case 'draudimas':
+    switch (id) {
+      case 'lietuvos-draudimas':
         return (
           <Image source={require(`../../../../assets/images/draudimas.png`)} />
         );

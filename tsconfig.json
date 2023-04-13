@@ -18,7 +18,8 @@
       "@color": ["src/style/color"],
       "@component/*": ["src/ui/component/*"],
       "@util/*": ["src/util/*"],
-      "@enums/*": ["src/enums/*"]
+      "@interface/*": ["src/types/interface/*"],
+      "@enums/*": ["src/types/enums/*"],
     }
   },
   "exclude": [

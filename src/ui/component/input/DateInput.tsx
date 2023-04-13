@@ -13,14 +13,14 @@ import DatePicker from 'react-native-date-picker';
 
 interface DetailsValues {
   regPlate: string;
-  date: Date;
+  startDate: string;
   personalCode: string;
 }
 
 export const DateInput: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { setFieldValue, values } = useFormikContext<DetailsValues>();
-  const { date } = values;
+  const { startDate } = values;
 
   return (
     <TouchableWithoutFeedback onPress={() => setOpen(true)}>
@@ -30,19 +30,19 @@ export const DateInput: React.FC = () => {
           <TextInput
             editable={false}
             style={styles.input}
-            value={date.toISOString().slice(0, 10).replace(/-/g, ' ')}
+            value={startDate.slice(0, 10).replace(/-/g, ' ')}
           />
           <CalendarIcon />
         </View>
         <DatePicker
           modal
-          date={date}
+          date={new Date(startDate)}
           mode="date"
           open={open}
           minimumDate={new Date()}
           onConfirm={date => {
             setOpen(false);
-            setFieldValue('date', date);
+            setFieldValue('startDate', date.toISOString());
           }}
           onCancel={() => setOpen(false)}
         />
