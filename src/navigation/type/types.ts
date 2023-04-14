@@ -7,7 +7,12 @@ import { screen } from '../../types/enums/screen';
 export type StackParamList = {
   [screen.DETAILS]: undefined;
   [screen.OFFERS]: formValues;
-  [screen.SUMMARY]: undefined;
+  [screen.SUMMARY]: {
+    name: string;
+    cost: number;
+    startDate: string;
+    endDate: string;
+  };
   [screen.LOADING]: undefined;
 };
 
