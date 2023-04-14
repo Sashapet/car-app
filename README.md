@@ -1,7 +1,7 @@
 # car-app
 installation: 
 
-pull reposiry
+pull repository
 yarn install
 install pods
 
