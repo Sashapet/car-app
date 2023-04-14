@@ -40,8 +40,9 @@ export const OffersScreen: React.FC = () => {
             {data?.map((offer, index) => (
               <OfferCard
                 key={index}
-                id={offer.insurer.id}
-                cost={offer.price.amount}
+                offer={offer}
+                startDate={params.startDate}
+                period={params.timePeriod}
               />
             ))}
           </ScrollView>

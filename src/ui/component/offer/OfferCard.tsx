@@ -5,13 +5,28 @@ import { InfoIcon } from '@component/icon/InfoIcon';
 import { CompleteIcon } from '@component/icon/CompleteIcon';
 import { DefaultBtn } from '@component/button/DefaultBtn';
 import { Cost } from '@component/text/Cost';
+import { IOffer } from '@interface/offerType';
+import { useNavigation } from '@react-navigation/native';
+import { screen } from '@enums/screen';
+import { periodType } from '@enums/periodType';
+
+import { StackNavProp } from '../../../navigation/type/types';
 
 interface IOfferCard {
-  id?: string;
-  cost?: number;
+  offer: IOffer;
+  startDate: string;
+  period: periodType;
 }
 
-export const OfferCard: React.FC<IOfferCard> = ({ cost, id }) => {
+export const OfferCard: React.FC<IOfferCard> = ({
+  offer,
+  startDate,
+  period,
+}) => {
+  const { navigate } = useNavigation<StackNavProp<screen.OFFERS>>();
+  const { id, name } = offer.insurer;
+  const { amount } = offer.price;
+
   const chooseImage = () => {
     switch (id) {
       case 'lietuvos-draudimas':
@@ -25,8 +40,33 @@ export const OfferCard: React.FC<IOfferCard> = ({ cost, id }) => {
       case 'ergo':
         return <Image source={require(`../../../../assets/images/ergo.png`)} />;
       default:
-        null;
+        return null;
     }
+  };
+
+  const choosePerdiod = () => {
+    switch (period) {
+      case periodType.LONG:
+        return 6;
+      case periodType.MEDIUM:
+        return 3;
+      case periodType.SHORT:
+        return 1;
+      default:
+        return 0;
+    }
+  };
+
+  const onNavigateToSummary = () => {
+    const endDate = new Date(startDate);
+    endDate.setMonth(endDate.getMonth() + choosePerdiod());
+
+    navigate(screen.SUMMARY, {
+      name,
+      cost: amount,
+      startDate,
+      endDate: endDate.toISOString(),
+    });
   };
 
   return (
@@ -34,7 +74,7 @@ export const OfferCard: React.FC<IOfferCard> = ({ cost, id }) => {
       <View style={styles.upperSection}>{chooseImage()}</View>
       <View style={styles.sectionLine}>
         <View style={styles.costContainer}>
-          <Cost>{cost} €</Cost>
+          <Cost>{amount} €</Cost>
           <View style={styles.infoContainer}>
             <InfoIcon />
           </View>
@@ -47,9 +87,7 @@ export const OfferCard: React.FC<IOfferCard> = ({ cost, id }) => {
             Transportavimas sumaišius degalus
           </Text>
         </View>
-        <DefaultBtn onPress={() => console.log('Pasirinkti')}>
-          Pasirinkti
-        </DefaultBtn>
+        <DefaultBtn onPress={onNavigateToSummary}>Pasirinkti</DefaultBtn>
       </View>
     </View>
   );
